@@ -33,7 +33,7 @@ function generate_ply(hdf_path   ::String,
         barlen    = 12,
         barglyphs = BarGlyphs(" ◼◼  "))
     @inbounds for i in 1:itr
-        obj = fid["group$(i)/mp_pos"] |> read
+        obj = Float32.(fid["group$(i)/mp_pos"] |> read)
         vertex = PlyElement("vertex",
             ArrayProperty("x", obj[:, 1]),
             ArrayProperty("y", obj[:, 2]),
@@ -70,7 +70,7 @@ end
 #-------------------#
 # Main: user inputs |
 #-------------------#
-hdf_path    = joinpath(@__DIR__, "")
+hdf_path    = joinpath(@__DIR__, "3d_collapse.h5")
 ply_path    = joinpath(@__DIR__, "ply_set")
 splash_path = joinpath(@__DIR__, "splash_set")
-generate_ply(hdf_path, ply_path, splash_path, 0.020, 20)
+generate_ply(hdf_path, ply_path, splash_path, 0.0007, 20)
