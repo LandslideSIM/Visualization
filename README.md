@@ -1,4 +1,4 @@
-# MPMRender 🎨
+# Visualization: MPM 🎨
 
 This repo can be used to do surface reconstruction for the results from MPM simulation. Currently,
 It is using [splashsurf](https://github.com/InteractiveComputerGraphics/splashsurf)[^1] to generate surfaces, and render the surfaces in [ParaView](https://www.paraview.org/download/). 
